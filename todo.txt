@@ -1,0 +1,18 @@
+todo:
+
+	improvements:
+		
+		- c++ implementation (MFC?)
+		- remember last path
+		- add color choosing for: background, lines, axis, font
+		- add right click handler for drawing frame
+		- add grid
+		- free moving
+		- drawing code (Direct2D, opengl)
+		- remember last position and size
+		- low end system support: show point moving
+		- multilanguage
+
+	bugs:
+
+		- open file with enter key

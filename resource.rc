@@ -1,0 +1,102 @@
+#include <windows.h>
+
+#include "resource.h"
+#include "version.h"
+
+LANGUAGE LANG_GERMAN, SUBLANG_GERMAN_SWISS
+
+VS_VERSION_INFO    VERSIONINFO
+FILEVERSION RC_FILEVERSION
+PRODUCTVERSION RC_FILEVERSION
+FILEFLAGSMASK    0x3fL // VS_FFI_FILEFLAGSMASK
+#ifdef _DEBUG
+FILEFLAGS        0x1L  // VS_FF_DEBUG|VS_FF_PRIVATEBUILD|VS_FF_PRERELEASE
+#else
+FILEFLAGS        0x0L  // final version
+#endif
+FILEOS           VOS_NT_WINDOWS32
+FILETYPE         VFT_APP
+FILESUBTYPE      VFT2_UNKNOWN { // not used
+    BLOCK "StringFileInfo" {
+        BLOCK "040904E4" {// Lang=US English, CharSet=Windows Multilingual
+            VALUE "Build",            "AUG 2009\0"
+            VALUE "Comments",         "\0"
+            VALUE "CompanyName",      "\0"
+            VALUE "Developer",        "Florian Tanner\0"
+            VALUE "FileDescription",  "Program for graphical view of splines.\0"
+            VALUE "FileVersion",      RC_FILEVERSION_STRING
+            VALUE "InternalName",     "\0"
+            VALUE "LegalCopyright",   "Copyright (C) 2009 Florian Tanner.\0"
+            VALUE "LegalTrademarks",  "All rights reserved.\0"
+            VALUE "OriginalFilename", "splines.exe\0"
+            VALUE "PrivateBuild",     "\0"
+            VALUE "ProductName",      "Splines\0"
+            VALUE "ProductVersion",   RC_FILEVERSION_STRING
+            VALUE "SpecialBuild",     "\0"
+            VALUE "Support",          "\0"
+            VALUE "Users",            "Unlimited.\0"
+        } // BLOCK "040904E4"
+    } // BLOCK "StringFileInfo"
+    BLOCK "VarFileInfo" {
+        VALUE "Translation", 0x0409, 1033 // 1252 = 0x04E4
+    } // BLOCK "VarFileInfo"
+}
+
+SPLINE_ICON_32     ICON    "icon.ico"
+
+SPLINE_SPLASHSCR   BITMAP  "splash.bmp"
+
+SPLINE_ACCEL ACCELERATORS {
+    "N", IDM_FILE_NEW, CONTROL, VIRTKEY
+    "O", IDM_FILE_OPEN, CONTROL, VIRTKEY
+    "S", IDM_FILE_SAVE, CONTROL, VIRTKEY
+    "B", IDM_FILE_SAVEASBITMAP, CONTROL, VIRTKEY
+    VK_F4, IDM_FILE_EXIT, ALT, VIRTKEY
+    "A", IDM_VIEW_AXES, SHIFT, VIRTKEY
+    "I", IDM_VIEW_SINGLESPLINES, SHIFT, VIRTKEY
+    "C", IDM_VIEW_COORD, SHIFT, VIRTKEY
+    "N", IDM_VIEW_POLYNOM, SHIFT, VIRTKEY
+    "P", IDM_VIEW_POINTS, SHIFT, VIRTKEY
+    "S", IDM_VIEW_SPLINE, SHIFT, VIRTKEY
+    "Z", IDM_VIEW_AUTOZOOM, SHIFT, VIRTKEY
+    VK_F5, IDM_VIEW_REDRAW, VIRTKEY
+    "Y", IDM_OPTION_AUTOSCALE, SHIFT, VIRTKEY
+    "L", IDM_OPTION_LOWENDSYSTEM, SHIFT, VIRTKEY
+    "S", IDM_OPTION_STANDARD, CONTROL, SHIFT, VIRTKEY
+    "H", IDM_HELP_HELP, CONTROL, VIRTKEY
+}
+
+SPLINE_MENU MENU {
+    POPUP "&File" {
+        MENUITEM "&New\tCTRL+N", IDM_FILE_NEW
+        MENUITEM "&Open\tCTRL+O", IDM_FILE_OPEN
+        MENUITEM "&Save\tCTRL+S", IDM_FILE_SAVE
+        MENUITEM "&Save as Bitmap\tCTRL+B", IDM_FILE_SAVEASBITMAP
+        MENUITEM SEPARATOR
+        MENUITEM "&Quit\tALT+F4", IDM_FILE_EXIT
+    }
+    POPUP "&View" {
+        MENUITEM "&Axes\tSHIFT+A", IDM_VIEW_AXES, CHECKED
+        MENUITEM "&Coordinates\tSHIFT+C", IDM_VIEW_COORD, CHECKED
+        MENUITEM SEPARATOR
+        MENUITEM "&Points\tSHIFT+P", IDM_VIEW_POINTS, CHECKED
+        MENUITEM "Poly&nom\tSHIFT+N", IDM_VIEW_POLYNOM
+        MENUITEM "Single spl&ines\tSHIFT+I", IDM_VIEW_SINGLESPLINES
+        MENUITEM "&Spline\tSHIFT+S", IDM_VIEW_SPLINE, CHECKED
+        MENUITEM SEPARATOR
+        MENUITEM "Automatic &zoom\tSHIFT+Z", IDM_VIEW_AUTOZOOM
+        MENUITEM "&Redraw\tF5", IDM_VIEW_REDRAW
+    }
+    POPUP "&Options" {
+        MENUITEM "&Automatic scaling of y-axis\tSHIFT+Y", IDM_OPTION_AUTOSCALE, CHECKED
+        MENUITEM SEPARATOR
+        MENUITEM "&Low-end System\tSHIFT+L", IDM_OPTION_LOWENDSYSTEM
+        MENUITEM SEPARATOR
+        MENUITEM "&Standard view\tCTRL+SHIFT+S", IDM_OPTION_STANDARD
+    }
+    POPUP "&Help" {
+        MENUITEM "&About", IDM_HELP_ABOUT
+        MENUITEM "&Help\tCTRL+H", IDM_HELP_HELP
+        MENUITEM "&Version", IDM_HELP_VERSION
+    }
+}

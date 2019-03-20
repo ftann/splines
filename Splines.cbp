@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Splines" />
+		<Option platforms="Windows;" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin\Debug\Splines" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Debug\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option use_console_runner="0" />
+				<Compiler>
+					<Add option="-fexpensive-optimizations" />
+					<Add option="-Os" />
+					<Add option="-O3" />
+					<Add option="-O2" />
+					<Add option="-O1" />
+					<Add option="-O" />
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="C:\Program Files\CodeBlocks\MinGW\lib\libcomdlg32.a" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin\Release\Splines" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Release\" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-fexpensive-optimizations" />
+					<Add option="-Os" />
+					<Add option="-O3" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-fexpensive-optimizations" />
+			<Add option="-Os" />
+			<Add option="-O3" />
+			<Add option="-Wall" />
+		</Compiler>
+		<Linker>
+			<Add option="-s" />
+			<Add library="gdi32" />
+			<Add library="user32" />
+			<Add library="kernel32" />
+		</Linker>
+		<Unit filename="main.cpp" />
+		<Unit filename="resource.h" />
+		<Unit filename="resource.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
+		<Unit filename="spline.cpp">
+			<Option weight="80" />
+		</Unit>
+		<Unit filename="spline.h" />
+		<Unit filename="spline_calc_polynom.cpp" />
+		<Unit filename="spline_calc_splines.cpp" />
+		<Unit filename="spline_coord_graph.cpp">
+			<Option weight="75" />
+		</Unit>
+		<Unit filename="spline_coord_window.cpp">
+			<Option weight="75" />
+		</Unit>
+		<Unit filename="spline_draw.cpp" />
+		<Unit filename="spline_intersection.cpp" />
+		<Unit filename="spline_print.cpp" />
+		<Unit filename="spline_scale.cpp" />
+		<Unit filename="version.h">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="win_ini.cpp" />
+		<Unit filename="win_ini.h" />
+		<Unit filename="win_menu.cpp" />
+		<Unit filename="win_menu.h" />
+		<Unit filename="win_opensave.cpp" />
+		<Unit filename="win_opensave.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+			<AutoVersioning>
+				<Scheme minor_max="10" build_max="0" rev_max="0" rev_rand_max="10" build_times_to_increment_minor="100" />
+				<Settings autoincrement="1" date_declarations="1" do_auto_increment="1" ask_to_increment="0" language="C++" svn="0" svn_directory="" header_path="version.h" />
+				<Changes_Log show_changes_editor="0" app_title="released version %M.%m.%b of %p" changeslog_path="ChangesLog.txt" />
+			</AutoVersioning>
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
